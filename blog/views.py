@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Post
 # Create your views here.
 def index(request):
@@ -7,5 +7,7 @@ def index(request):
     return render(request,"blog/blog-home.html",context)
 
 
-def blog_single(request):
-    return render(request,"blog/blog-single.html")
+def blog_single(request,pid):
+    post = get_object_or_404(Post, id=pid, status=1)
+    context = {"post": post}
+    return render(request, "blog/blog-single.html", context)
