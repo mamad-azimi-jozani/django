@@ -125,7 +125,7 @@
 
 									<ul class="tags">
 										{% for category in post.category.all %}
-										<li><a href="#">{{ category.name }}{% if not forloop.last %}, {% endif %}</a></li>
+										<li><a href="#">{{ category.name.upper }}{% if not forloop.last %}, {% endif %}</a></li>
 										{% endfor %}
 									</ul>
 
