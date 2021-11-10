@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load blog_tags %}
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -253,7 +254,7 @@
 			                        </form>
 								</div>
 								{% include "blog/blog-writer.html" %}
-								{% include "blog/popular-post.html" %}
+								{% popular_post %}
 								{% include "blog/post-category.html" %}
 								{% include "blog/tags.html" %}
 							</div>
